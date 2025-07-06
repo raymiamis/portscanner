@@ -24,10 +24,15 @@ go install https://github.com/raymiamis/portscanner
 ## ⌨️ Usage
 
 ```
-portscanner -host [target host to be scanned] -start [starting port] -end [ending port] - timeout [timeout in ms]
+portscanner -host [target host to be scanned] -start [starting port] -end [ending port] -timeout [timeout in ms]
 ```
 or
 ```
 portscanner -host [target host to be scanned]
 ```
 for starting & ending ports defaulting in 1 - 1024.
+
+```
+portscanner
+```
+returns the main menu.
