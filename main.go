@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"net"
+	"os"
 	"strconv"
 	"time"
 )
@@ -25,6 +26,11 @@ func main() {
 	timeout := flag.Int("timeout", 200, "timeout in ms for each port, standard 200ms")
 
 	flag.Parse()
+
+	if flag.NArg() < 1 {
+		showMainMenu()
+		os.Exit(0)
+	}
 
 	if *host == "" {
 		fmt.Println("error: target host is necessary. example: portscanner -host scanme.nmap.org")
@@ -48,4 +54,14 @@ func main() {
 	}
 
 	fmt.Printf("all set! scan completed.")
+}
+
+func showMainMenu() {
+	fmt.Println(`
+░█▀█░█▀█░█▀▄░▀█▀░█▀▀░█▀▀░█▀█░█▀█░█▀█░█▀▀░█▀▄
+░█▀▀░█░█░█▀▄░░█░░▀▀█░█░░░█▀█░█░█░█░█░█▀▀░█▀▄
+░▀░░░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀░▀░▀░▀░▀░▀▀▀░▀░▀
+
+Portscanner - CLI remote TCP port scanning tool`)
+	flag.PrintDefaults()
 }
