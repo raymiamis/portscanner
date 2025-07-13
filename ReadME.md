@@ -16,9 +16,13 @@ cd portscanner
 go build -o portscanner
 sudo cp portscanner /usr/local/bin/
 ```
-or
+or with Go-Install (for Go users):
 ```bash
 go install https://github.com/raymiamis/portscanner
+```
+You might have to set the Go binary path if not done already:
+```bash
+export PATH="$HOME/go/bin:$PATH"
 ```
 
 ## ⌨️ Usage
